@@ -1,1 +1,7 @@
-<p>list-page works!</p>
+<ul>
+  <li *ngFor="let heroe of heroes">
+    <a [routerLink]="['/heroe', heroe.id]">
+      {{ heroe.superhero }}
+    </a>
+  </li>
+</ul>
