@@ -8,6 +8,8 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { AddPageComponent } from './pages/add-page/add-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
+import {MaterialModule} from "../material/material.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
   ],
   imports: [
     CommonModule,
-    HeroeRoutingModule
+    HeroeRoutingModule,
+    MaterialModule,
+    SharedModule
   ]
 })
 export class HeroeModule { }
