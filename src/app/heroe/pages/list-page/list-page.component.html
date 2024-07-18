@@ -1,7 +1,19 @@
-<ul>
+<h1>Listado de Heroes</h1>
+<mat-divider></mat-divider>
+
+<div class="grid mb-8">
+  <div *ngFor="let hero of heroes"
+       class="col-12 sm:col-4 md:col-3 xl:col-2">
+    <heroe-hero-card [hero]="hero"></heroe-hero-card>
+
+  </div>
+
+</div>
+
+<!--<ul>
   <li *ngFor="let heroe of heroes">
     <a [routerLink]="['/heroe', heroe.id]">
       {{ heroe.superhero }}
     </a>
   </li>
-</ul>
+</ul>-->

@@ -10,6 +10,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import {MaterialModule} from "../material/material.module";
 import {SharedModule} from "../shared/shared.module";
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {SharedModule} from "../shared/shared.module";
     ListPageComponent,
     AddPageComponent,
     SearchPageComponent,
-    EditPageComponent
+    EditPageComponent,
+    HeroCardComponent
   ],
   imports: [
     CommonModule,
