@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'heroes-app-routes-multilevel'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('heroes-app-routes-multilevel');
+    expect(app.title).toEqual('heroe-app-routes-multilevel');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, heroes-app-routes-multilevel');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, heroe-app-routes-multilevel');
   });
 });

@@ -17,7 +17,7 @@ export class SideBarMenuService {
       route: 'add-hero',
       title: 'Añadir',
       icon: 'add',
-      description: 'This is the heroes'
+      description: 'This is the heroe'
     },
     {
       route: 'search-hero',

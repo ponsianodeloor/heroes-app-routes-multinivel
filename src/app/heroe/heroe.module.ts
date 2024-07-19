@@ -11,6 +11,7 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import {MaterialModule} from "../material/material.module";
 import {SharedModule} from "../shared/shared.module";
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { HeroImagePipe } from './pipes/hero-image.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     AddPageComponent,
     SearchPageComponent,
     EditPageComponent,
-    HeroCardComponent
+    HeroCardComponent,
+    HeroImagePipe
   ],
   imports: [
     CommonModule,
