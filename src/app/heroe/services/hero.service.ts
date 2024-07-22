@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HeroInterface} from "../interfaces/hero.interface.";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
+import {catchError, Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,12 @@ export class HeroService {
 
   getHeroes(){
     return this.http.get<HeroInterface[]>(`${this.baseUrl}/heroes`);
+  }
+
+  getHeroById(id:string):Observable<HeroInterface | undefined>{
+    return this.http.get<HeroInterface>(`${this.baseUrl}/heroes/${id}`)
+      .pipe(
+        catchError(err => of(undefined))
+      );
   }
 }

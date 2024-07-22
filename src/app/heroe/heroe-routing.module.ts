@@ -15,7 +15,7 @@ const routes: Routes = [
       {path: 'list-hero', component: ListPageComponent},
       { path: 'add-hero', component: AddPageComponent },
       { path: 'edit-hero/:id', component: EditPageComponent },
-      { path: 'search-hero/:name', component: SearchPageComponent },
+      { path: 'search-hero', component: SearchPageComponent },
       { path: ':id', component: HeroPageComponent },
       { path: '**', redirectTo: 'list-hero' }
     ]
