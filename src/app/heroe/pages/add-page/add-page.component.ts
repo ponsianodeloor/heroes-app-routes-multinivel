@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './add-page.component.css'
 })
 export class AddPageComponent {
-
+  public publishers = [
+    { id: 'DC Comics', desc: 'DC - Comics' },
+    { id: 'Marvel Comics', desc: 'Marvel - Comics' },
+  ];
+  
 }
