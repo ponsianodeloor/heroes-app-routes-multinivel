@@ -10,7 +10,6 @@ import {catchError, Observable, of} from "rxjs";
 export class HeroService {
 
   private baseUrl:string = environment.baseUrl;
-
   public heroes: HeroInterface[] = [];
 
   constructor(
@@ -25,6 +24,16 @@ export class HeroService {
     return this.http.get<HeroInterface>(`${this.baseUrl}/heroes/${id}`)
       .pipe(
         catchError(err => of(undefined))
+      );
+  }
+
+  getSuggestions(query:string):Observable<HeroInterface[]>{
+    if(!query.trim()){
+      return of([]);
+    }
+    return this.http.get<HeroInterface[]>(`${this.baseUrl}/heroes?q=${query}`)
+      .pipe(
+        catchError(err => of([]))
       );
   }
 }
