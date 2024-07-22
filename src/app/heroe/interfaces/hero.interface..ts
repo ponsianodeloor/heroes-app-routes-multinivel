@@ -10,8 +10,8 @@ export interface HeroInterface{
 }
 
 export enum Publisher{
-  DC = 'DC Comics',
-  MARVEL = 'Marvel Comics'
+  DCComics = 'DC Comics',
+  MARVELComics = 'Marvel Comics'
 }
 
 
