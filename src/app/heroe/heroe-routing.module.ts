@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       {path: 'list-hero', component: ListPageComponent},
       { path: 'add-hero', component: AddPageComponent },
-      { path: 'edit-hero/:id', component: EditPageComponent },
+      { path: 'edit-hero/:id', component: AddPageComponent },
       { path: 'search-hero', component: SearchPageComponent },
       { path: ':id', component: HeroPageComponent },
       { path: '**', redirectTo: 'list-hero' }

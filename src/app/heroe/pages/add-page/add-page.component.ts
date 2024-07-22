@@ -1,14 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HeroInterface, Publisher} from "../../interfaces/hero.interface.";
 import {HeroService} from "../../services/hero.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {switchMap} from "rxjs";
 
 @Component({
   selector: 'app-add-page',
   templateUrl: './add-page.component.html',
   styleUrl: './add-page.component.css'
 })
-export class AddPageComponent {
+export class AddPageComponent implements OnInit {
 
   public heroForm = new FormGroup(
     {
@@ -28,8 +30,24 @@ export class AddPageComponent {
   ];
 
   constructor(
-    private heroesService: HeroService
+    private heroesService: HeroService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
+
+  ngOnInit(): void {
+    if(!this.router.url.includes('edit-hero')) return;
+
+    this.activatedRoute.params.pipe(
+      switchMap(({id}) => this.heroesService.getHeroById(id))
+    ).subscribe(hero => {
+      if (!hero) {
+        this.router.navigateByUrl('/list-hero');
+        return;
+      }
+      this.heroForm.reset(hero);
+    });
+  }
 
   get currentHero(): HeroInterface {
     return this.heroForm.value as HeroInterface;
@@ -53,7 +71,6 @@ export class AddPageComponent {
       this.heroesService.addHero(this.currentHero)
         .subscribe( hero => console.log('Created', hero));
     }
-
   }
 
 }
