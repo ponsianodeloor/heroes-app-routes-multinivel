@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HeroInterface} from "../interfaces/hero.interface.";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {catchError, Observable, of} from "rxjs";
+import {catchError, map, Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -36,4 +36,22 @@ export class HeroService {
         catchError(err => of([]))
       );
   }
+
+  addHero(hero:HeroInterface):Observable<HeroInterface>{
+    return this.http.post<HeroInterface>(`${this.baseUrl}/heroes`,hero);
+  }
+
+  updateHero(hero:HeroInterface):Observable<HeroInterface>{
+    if (!hero.id){ throw new Error('The hero must have an id');}
+    return this.http.put<HeroInterface>(`${this.baseUrl}/heroes/${hero.id}`,hero);
+  }
+
+  deleteHero(id:string):Observable<boolean>{
+    return this.http.delete<any>(`${this.baseUrl}/heroes/${id}`)
+      .pipe(
+        map(resp => resp.ok),
+        catchError(err => of(false))
+      );
+  }
+
 }
