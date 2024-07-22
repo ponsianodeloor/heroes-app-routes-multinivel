@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "usuario": "John Doe",
       "email": "john.due@gmail.com"
     }
@@ -166,6 +166,33 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "",
+      "superhero": "ponsio",
+      "publisher": "DC Comics",
+      "alter_ego": "naun",
+      "first_appearance": "19-10-1989",
+      "characters": "Naun",
+      "alt_img": "Mireyita"
+    },
+    {
+      "id": "1721625965090",
+      "superhero": "asd",
+      "publisher": "DC Comics",
+      "alter_ego": "as",
+      "first_appearance": "sdas",
+      "characters": "asd",
+      "alt_img": "asdsada"
+    },
+    {
+      "id": "1721626072724",
+      "superhero": "Dat",
+      "publisher": "Marvel Comics",
+      "alter_ego": "dasd",
+      "first_appearance": "llpp",
+      "characters": "nskdajsk",
+      "alt_img": "https://e7.pngegg.com/pngimages/570/435/png-clipart-flash-superhero-marvel-comics-super-hero-comics-superhero.png"
     }
   ]
 }
