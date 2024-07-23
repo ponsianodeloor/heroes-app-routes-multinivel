@@ -14,6 +14,7 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { ConfirmDeleteHeroComponent } from './components/dialogs/confirm-delete-hero/confirm-delete-hero.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     SearchPageComponent,
     EditPageComponent,
     HeroCardComponent,
-    HeroImagePipe
+    HeroImagePipe,
+      ConfirmDeleteHeroComponent
   ],
   imports: [
     CommonModule,

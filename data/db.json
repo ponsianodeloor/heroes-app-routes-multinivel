@@ -187,15 +187,6 @@
       "alt_img": "asdsada"
     },
     {
-      "id": "1721626072724",
-      "superhero": "Dat",
-      "publisher": "Marvel Comics",
-      "alter_ego": "dasd",
-      "first_appearance": "llpp",
-      "characters": "nskdajsk",
-      "alt_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6oxGartkllfO0Ri_iz7m_fB7di5ILAmeuQ&s"
-    },
-    {
       "id": "1721702399015",
       "superhero": "Nuevo",
       "publisher": "DC Comics",
@@ -212,15 +203,6 @@
       "first_appearance": "hero",
       "characters": "nuevo",
       "alt_img": "https://www.superherodb.com/gallery/025/292/29298.webp"
-    },
-    {
-      "id": "1721702535162",
-      "superhero": "Primiciaa",
-      "publisher": "DC Comics",
-      "alter_ego": "el",
-      "first_appearance": "Nue",
-      "characters": "per",
-      "alt_img": "https://www.superherodb.com/gallery/025/269/26976.webp"
     }
   ]
 }
