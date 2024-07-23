@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
 import {HeroInterface, Publisher} from "../../interfaces/hero.interface.";
 import {HeroService} from "../../services/hero.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -32,7 +33,8 @@ export class AddPageComponent implements OnInit {
   constructor(
     private heroesService: HeroService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -64,13 +66,30 @@ export class AddPageComponent implements OnInit {
     if (this.currentHero.id) {
       //update
       this.heroesService.updateHero(this.currentHero)
-        .subscribe( hero => console.log('Updated', hero));
+        .subscribe(
+          hero => {
+            console.log('Updated', hero);
+            this.showSnackBar(`${this.currentHero.superhero} was updated`);
+          }
+        );
     }else {
       //create
       this.currentHero.id = new Date().getTime().toString();
       this.heroesService.addHero(this.currentHero)
-        .subscribe( hero => console.log('Created', hero));
+        .subscribe(
+          hero => {
+            console.log('Created', hero);
+            this.router.navigateByUrl('heroe/edit-hero/' + hero.id);
+            this.showSnackBar(`${this.currentHero.superhero} was created`);
+          }
+        );
     }
+  }
+
+  showSnackBar(message: string) {
+    this.snackBar.open(message, 'Ok!', {
+      duration: 2500
+    });
   }
 
 }

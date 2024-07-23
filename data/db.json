@@ -11,7 +11,7 @@
       "id": "dc-batman",
       "superhero": "Batman",
       "publisher": "DC Comics",
-      "alter_ego": "Bruce Wayne",
+      "alter_ego": "Bruce Waynes",
       "first_appearance": "Detective Comics #27",
       "characters": "Bruce Wayne",
       "alt_img": "https://e7.pngegg.com/pngimages/11/522/png-clipart-batman-3d-sticker-batman-arkham-origins-telegram-batman-comics-heroes.png"
@@ -193,7 +193,34 @@
       "alter_ego": "dasd",
       "first_appearance": "llpp",
       "characters": "nskdajsk",
-      "alt_img": "https://e7.pngegg.com/pngimages/570/435/png-clipart-flash-superhero-marvel-comics-super-hero-comics-superhero.png"
+      "alt_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6oxGartkllfO0Ri_iz7m_fB7di5ILAmeuQ&s"
+    },
+    {
+      "id": "1721702399015",
+      "superhero": "Nuevo",
+      "publisher": "DC Comics",
+      "alter_ego": "Hero",
+      "first_appearance": "1989",
+      "characters": "Akura",
+      "alt_img": "https://www.superherodb.com/gallery/075/775/77566.webp"
+    },
+    {
+      "id": "1721702470876",
+      "superhero": "Nuevo",
+      "publisher": "DC Comics",
+      "alter_ego": "Dato",
+      "first_appearance": "hero",
+      "characters": "nuevo",
+      "alt_img": "https://www.superherodb.com/gallery/025/292/29298.webp"
+    },
+    {
+      "id": "1721702535162",
+      "superhero": "Primiciaa",
+      "publisher": "DC Comics",
+      "alter_ego": "el",
+      "first_appearance": "Nue",
+      "characters": "per",
+      "alt_img": "https://www.superherodb.com/gallery/025/269/26976.webp"
     }
   ]
 }
