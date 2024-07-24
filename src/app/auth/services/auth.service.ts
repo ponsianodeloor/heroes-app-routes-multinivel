@@ -31,6 +31,30 @@ export class AuthService {
       );
   }
 
+  checkToken():Observable<boolean> {
+    if (!localStorage.getItem('token')) {
+      return new Observable<boolean>(subscriber => {
+        subscriber.next(false);
+        subscriber.complete();
+      });
+    }
+
+    return new Observable<boolean>(subscriber => {
+      this.http.get<UserInterface>(`${this.baseUrl}/users/1`)
+        .subscribe(user => {
+          this.user = user;
+          subscriber.next(true);
+          subscriber.complete();
+        }, error => {
+          this.user = undefined;
+          localStorage.removeItem('token');
+          localStorage.clear();
+          subscriber.next(false);
+          subscriber.complete();
+        });
+    })
+  }
+
   logout() {
     this.user = undefined;
     localStorage.removeItem('token');
