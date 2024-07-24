@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {UserInterface} from "../interfaces/user.interface";
-import {Observable, tap} from "rxjs";
+import {catchError, map, Observable, of, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -32,12 +32,7 @@ export class AuthService {
   }
 
   checkToken():Observable<boolean> {
-    if (!localStorage.getItem('token')) {
-      return new Observable<boolean>(subscriber => {
-        subscriber.next(false);
-        subscriber.complete();
-      });
-    }
+    if (!localStorage.getItem('token')) return of(false);
 
     return new Observable<boolean>(subscriber => {
       this.http.get<UserInterface>(`${this.baseUrl}/users/1`)

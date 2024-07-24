@@ -15,13 +15,13 @@ export class LoginPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.authService.checkToken()
+    /*this.authService.checkToken()
       .subscribe(isLogged => {
         if (isLogged) {
           this.Router.navigate(['/heroe/list']);
         }
       }
-    );
+    );*/
   }
 
   login() {

@@ -21,12 +21,12 @@ export class ListPageComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.authService.checkToken().subscribe(isLogged => {
+    /*this.authService.checkToken().subscribe(isLogged => {
       if (!isLogged) {
         this.authService.logout();
         this.router.navigate(['/auth/login']);
       }
-    });
+    });*/
 
     this.loadHeroes();
   }
