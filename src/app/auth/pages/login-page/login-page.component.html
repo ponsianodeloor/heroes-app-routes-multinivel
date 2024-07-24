@@ -11,7 +11,13 @@
     <input type="password" matInput placeholder="Nombre de Usuario">
   </mat-form-field>
 
-  <button mat-button mat-flat-button color="Primary">
+  <button
+    mat-button
+    mat-flat-button
+    color="primary"
+    (click)="login()"
+  >
+
     <mat-icon>login</mat-icon>
     Ingresar
   </button>
