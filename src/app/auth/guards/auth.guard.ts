@@ -12,7 +12,31 @@ export class AuthGuard implements CanActivate, CanMatch {
   constructor(private authService: AuthService, private router: Router) {
   }
 
-  canActivate(
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> {
+    return this.authService.checkToken().pipe(
+      map(isAuthenticated => {
+        if (!isAuthenticated) {
+          this.authService.login();
+          return false;
+        }
+        return true;
+      })
+    );
+  }
+
+  canMatch(route: Route, segments: UrlSegment[]): Observable<boolean | UrlTree> {
+    return this.authService.checkToken().pipe(
+      map(isAuthenticated => {
+        if (!isAuthenticated) {
+          this.authService.login();
+          return false;
+        }
+        return true;
+      })
+    );
+  }
+
+  /*canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -39,6 +63,6 @@ export class AuthGuard implements CanActivate, CanMatch {
           return true;
         })
       );
-  }
+  }*/
 
 }

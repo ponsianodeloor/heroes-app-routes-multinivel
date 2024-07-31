@@ -25,11 +25,11 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.authService.login('ponsianodeloor@gmail.com', '123456')
+    /*this.authService.login('ponsianodeloor@gmail.com', '123456')
       .subscribe(user => {
         console.log(user);
         this.Router.navigate(['/heroe/list']);
-      });
+      });*/
   }
 
 }

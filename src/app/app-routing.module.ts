@@ -6,9 +6,14 @@ import {PublicGuard} from "./auth/guards/public.guard";
 
 const routes: Routes = [
   {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
+    canActivate: [PublicGuard]
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-    canActivate: [PublicGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'heroe',
