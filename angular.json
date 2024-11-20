@@ -75,6 +75,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4210
+          },
           "configurations": {
             "production": {
               "buildTarget": "heroes-app-routes-multilevel:build:production"
